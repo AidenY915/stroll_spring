@@ -29,16 +29,12 @@ import com.stroll.www.vo.PlaceVO;
 @Service
 public class PlaceService {
 
-//    private final PageController pageController;
 	@Autowired
 	private PlaceDAO dao;
 	@Autowired
 	private ImageDAO imageDao; 
 	private final static int PAGE_SIZE = 10;
 
-//    PlaceService(PageController pageController) {
-//        this.pageController = pageController;
-//    }
 
 	public PlaceVO getPlace(PlaceVO vo) {
 		vo = dao.getPlace(vo);
@@ -83,9 +79,9 @@ public class PlaceService {
 
 	public int insertPlace(PlaceVO vo, MultipartFile[] imgs) {
 		String jsonStr = getKakaoCoordinate(vo.getAddress() + vo.getDetailAddress());
-//		String x = jsonStr.split("\"x\":\"")[1].split("\"")[0];
-//		String y = jsonStr.split("\"y\":\"")[1].split("\"")[0];
-		String x = "0", y ="0";
+		String x = jsonStr.split("\"x\":\"")[1].split("\"")[0];
+		String y = jsonStr.split("\"y\":\"")[1].split("\"")[0];
+//		String x = "0", y ="0";
 		System.out.println(x);
 		System.out.println(y);
 		vo.setX(Double.parseDouble(x));
@@ -98,6 +94,7 @@ public class PlaceService {
 	}
 
 	private String getKakaoCoordinate(String address) {
+		
 		String apiKey = ApiKey.kakaoApiKey;
 		String apiUrl = "https://dapi.kakao.com/v2/local/search/address.json";
 		String jsonString = null;
@@ -208,13 +205,14 @@ public class PlaceService {
 	}
 
 	private void deleteImgs(PlaceVO vo) {
-		File dir = new File(
-				"C:\\Users\\Aiden\\Documents\\Codes\\SPRING\\stroll\\src\\main\\webapp\\resources\\upload\\imgs\\");
-		File[] files = dir.listFiles();
-		for(File file : files)
-		if (file.getName().contains(vo.getNo()+"_")) {
+		List<ImageVO> imgs = imageDao.selectImgsByPlaceNo(vo.getNo());
+		
+		for(ImageVO img : imgs) {
+			File file = new File(img.getImagePath().replaceFirst("images", "C:/stroll_image"));
+			System.out.println(img.getImagePath());
 			if (file.delete()) {
 				System.out.println("파일삭제 성공");
+				imageDao.deleteImg(img.getNo());
 			} else {
 				System.out.println("파일삭제 실패");
 			}

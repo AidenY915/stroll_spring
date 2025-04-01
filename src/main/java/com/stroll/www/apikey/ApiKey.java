@@ -1,17 +1,16 @@
 package com.stroll.www.apikey;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class ApiKey {
 	public static String kakaoApiKey;
-	{
-        Properties prop = new Properties();
-
-        try (FileInputStream fis = new FileInputStream("src/main/resources/config/api_key.properties")) {
-            prop.load(fis);
-            String kakaoApiKey = prop.getProperty("kakao_api_key");
+	static {
+        try (InputStream is = ApiKey.class.getClassLoader().getResourceAsStream("config/api_key.properties")) {
+        	Properties prop = new Properties();
+            prop.load(is);
+            kakaoApiKey = prop.getProperty("kakao_api_key");
         } catch (IOException e) {
             e.printStackTrace();
         }
