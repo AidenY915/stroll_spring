@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
 import './Main.css';
 
 const Main: React.FC = () => {
+  const [currentBanner, setCurrentBanner] = useState(0);
+  
   const categories = [
     { name: '펜션', icon: '/images/inn_icon.png', category: 'pension' },
     { name: '카페', icon: '/images/cafe_icon.svg', category: 'cafe' },
@@ -20,32 +20,28 @@ const Main: React.FC = () => {
     '/images/banner3.jpg',
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBanner((prev) => (prev + 1) % bannerImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [bannerImages.length]);
+
   return (
     <div className="main-page">
       <header>
         <section className="banner-slider">
-          <Splide
-            options={{
-              type: 'loop',
-              perPage: 1,
-              perMove: 1,
-              autoplay: true,
-              interval: 3000,
-              speed: 500,
-              pagination: false,
-              width: '100%',
-              padding: '0',
-              arrows: false,
-              pauseOnHover: false,
-              pauseOnFocus: false,
-            }}
-          >
+          <div className="banner-container">
             {bannerImages.map((image, index) => (
-              <SplideSlide key={index}>
-                <img className="banner-img" src={image} alt={`배너 ${index + 1}`} />
-              </SplideSlide>
+              <img 
+                key={index}
+                className={`banner-img ${index === currentBanner ? 'active' : ''}`}
+                src={image} 
+                alt={`배너 ${index + 1}`} 
+              />
             ))}
-          </Splide>
+          </div>
         </section>
       </header>
 

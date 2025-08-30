@@ -5,7 +5,7 @@ interface MyPageProps {
   onUserChange: (user: any) => void;
 }
 
-const MyPage: React.FC<MyPageProps> = ({ user, onUserChange }) => {
+const MyPage: React.FC<MyPageProps> = ({ user }) => {
   if (!user) {
     return (
       <div style={{ marginTop: '72px', padding: '50px 0' }}>

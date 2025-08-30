@@ -12,7 +12,7 @@ const AroundMe: React.FC<AroundMeProps> = ({ user }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [places, setPlaces] = useState<Place[]>([]);
   const [loading, setLoading] = useState(false);
-  const [myLocation, setMyLocation] = useState('내 위치:');
+  const [myLocation] = useState('내 위치:');
   const [filters, setFilters] = useState({
     maxDistance: parseInt(searchParams.get('maxDistance') || '50'),
     minStar: parseInt(searchParams.get('minStar') || '0'),
