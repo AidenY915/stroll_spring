@@ -1,0 +1,99 @@
+.register-page {
+  margin-top: 72px;
+}
+
+.register-form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.register-form td {
+  padding: 15px 10px;
+  vertical-align: middle;
+}
+
+.register-form td:first-child {
+  width: 120px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.register-form td:nth-child(2) {
+  width: 250px;
+}
+
+.register-form td:last-child {
+  width: 200px;
+  padding-left: 15px;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #ff5f55;
+  box-shadow: 0 0 0 2px rgba(255, 95, 85, 0.2);
+}
+
+.validation-message {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.validation-message.valid {
+  color: #198754;
+}
+
+.validation-message.invalid {
+  color: red;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .register-form {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .register-form table {
+    display: block;
+  }
+  
+  .register-form tr {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .register-form td {
+    display: block;
+    width: 100% !important;
+    padding: 5px 0;
+  }
+  
+  .register-form td:first-child {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+}

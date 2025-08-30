@@ -1,0 +1,192 @@
+.moreinfo-page {
+  margin-top: 72px;
+}
+
+.moreinfo-page .container {
+  display: flex;
+  gap: 50px;
+  padding-top: 40px;
+}
+
+.side-lnb {
+  width: 200px;
+  margin-top: 30px;
+}
+
+.side-lnb > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-lnb > ul > li {
+  cursor: pointer;
+  margin-bottom: 25px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.side-lnb > ul > li:hover {
+  background-color: #f5f5f5;
+  color: #ff5f55;
+}
+
+.side-lnb > ul > li.selected {
+  color: #ff5f55;
+  background-color: #fff5f5;
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  min-height: 600px;
+  font-size: 16px;
+}
+
+/* 공지사항 스타일 */
+.notice-content {
+  max-width: 700px;
+}
+
+.notice-item {
+  border-bottom: 1px solid #eee;
+  padding: 25px 0;
+}
+
+.notice-item:last-child {
+  border-bottom: none;
+}
+
+.notice-item h4 {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0 0 10px 0;
+}
+
+.notice-date {
+  color: #999;
+  font-size: 14px;
+  margin: 0 0 15px 0;
+}
+
+.notice-content p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* FAQ 스타일 */
+.faq-content {
+  max-width: 700px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 25px 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-size: 18px;
+  color: #ff5f55;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.faq-answer {
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* QNA 스타일 */
+.qna-content {
+  max-width: 600px;
+}
+
+.qna-content h4 {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 30px;
+}
+
+.qna-form {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.qna-form .form-group {
+  margin-bottom: 25px;
+}
+
+.qna-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.qna-form input,
+.qna-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.qna-form input:focus,
+.qna-form textarea:focus {
+  outline: none;
+  border-color: #ff5f55;
+  box-shadow: 0 0 0 2px rgba(255, 95, 85, 0.2);
+}
+
+.qna-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.qna-form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .moreinfo-page .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .side-lnb {
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .side-lnb > ul {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .side-lnb > ul > li {
+    white-space: nowrap;
+    margin-bottom: 0;
+    padding: 8px 15px;
+  }
+  
+  .qna-form {
+    padding: 20px;
+  }
+}

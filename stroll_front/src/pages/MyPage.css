@@ -1,0 +1,253 @@
+.mypage {
+  margin-top: 72px;
+}
+
+.mypage .container {
+  display: flex;
+  gap: 50px;
+  padding-top: 40px;
+}
+
+.side-lnb {
+  width: 200px;
+  margin-top: 30px;
+}
+
+.side-lnb > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-lnb > ul > li {
+  margin-bottom: 25px;
+}
+
+.side-lnb > ul > li > button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.side-lnb > ul > li.selected-li {
+  color: #ff5f55;
+}
+
+.side-lnb > ul > li > button:hover {
+  color: #ff5f55;
+}
+
+.content {
+  flex: 1;
+  min-height: 1000px;
+  font-size: 18px;
+}
+
+.content h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.content hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin-bottom: 30px;
+}
+
+.results {
+  list-style: none;
+  padding: 0;
+}
+
+.results > li {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.results > li:hover {
+  background-color: #f5f5f5;
+}
+
+.results > li > a {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.place-img {
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.results > li > a > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.place-name {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.distance {
+  color: #ff5f55;
+  font-weight: 600;
+}
+
+.star {
+  color: #ffa500;
+  font-weight: 600;
+}
+
+.reviews-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reviews-table th {
+  border-bottom: 1px solid #aaa;
+  padding: 0 0 8px 0;
+  text-align: left;
+  font-weight: 600;
+}
+
+.reviews-table td {
+  height: 60px;
+  border-bottom: 0.5px solid #aaa;
+  padding: 10px 5px;
+  vertical-align: middle;
+}
+
+.reviews-table td:nth-child(1),
+.reviews-table th:nth-child(1) {
+  width: 175px;
+  text-align: center;
+}
+
+.reviews-table td:nth-child(2),
+.reviews-table th:nth-child(2) {
+  width: 375px;
+}
+
+.reviews-table td:nth-child(3),
+.reviews-table th:nth-child(3) {
+  width: 50px;
+  text-align: center;
+}
+
+.reviews-table td:nth-child(4),
+.reviews-table th:nth-child(4) {
+  width: 150px;
+  text-align: center;
+}
+
+.reviews-table a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.reviews-table a:hover {
+  color: #ff5f55;
+}
+
+.withdraw-form {
+  max-width: 500px;
+}
+
+.withdraw-form p {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.withdraw-form table {
+  width: 100%;
+}
+
+.withdraw-form td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.withdraw-form td:first-child {
+  width: 100px;
+  font-weight: 600;
+}
+
+.withdraw-form input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.withdraw-btn {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0;
+  border-radius: 2px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.withdraw-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .mypage .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .side-lnb {
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .side-lnb > ul {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .side-lnb > ul > li {
+    white-space: nowrap;
+    margin-bottom: 0;
+  }
+  
+  .results > li > a {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .place-img {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .reviews-table {
+    font-size: 14px;
+  }
+  
+  .reviews-table th,
+  .reviews-table td {
+    padding: 8px 4px;
+  }
+}

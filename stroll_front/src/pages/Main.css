@@ -1,0 +1,96 @@
+.main-page {
+  color: rgba(0, 0, 0, 0.56);
+  font-family: "맑은 고딕", "맑은고딕", "Malgun Gothic", sans-serif;
+}
+
+.main-page header {
+  background-color: inherit;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-width: 1000px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  margin-top: 71px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  position: relative;
+  height: 400px;
+  object-fit: cover;
+}
+
+.category {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  width: 16.6%;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-5px);
+  color: #ff5f55;
+}
+
+.category-item img {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.category-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.news {
+  margin-top: 100px;
+  color: rgba(0, 0, 0, 0.87);
+  padding-bottom: 50px;
+}
+
+.news h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .main-page header {
+    min-width: auto;
+  }
+  
+  .banner-img {
+    height: 250px;
+  }
+  
+  .category {
+    margin-top: 30px;
+  }
+  
+  .category-item {
+    width: 33.33%;
+    margin-bottom: 20px;
+  }
+  
+  .news {
+    margin-top: 50px;
+  }
+}
