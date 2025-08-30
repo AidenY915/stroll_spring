@@ -11,6 +11,10 @@
   margin-left: 10px;
 }
 
+.content-wrapper {
+  padding: 20px 0;
+}
+
 .category-ul {
   border-bottom: 1px solid #ccc;
   overflow: hidden;
@@ -184,31 +188,6 @@
 .star {
   color: #ffa500;
   font-weight: 600;
-}
-
-.paging-div {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.page-btn {
-  background-color: #fff;
-  color: inherit;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  padding: 8px 12px;
-  margin: 0 2px;
-  cursor: pointer;
-}
-
-.page-btn:hover {
-  background-color: #ff5f55;
-  color: #fff;
-}
-
-.page-btn.current-page {
-  color: #ff5f55;
-  border-color: #ff5f55;
 }
 
 @media (max-width: 768px) {

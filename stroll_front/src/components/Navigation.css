@@ -208,3 +208,31 @@
 .login-modal a:hover {
   color: #e54e44;
 }
+
+@media (max-width: 1024px) {
+  #gnb > ul {
+    width: 95%;
+    margin: 0 2.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  #gnb > ul > li {
+    width: auto;
+    padding: 0 10px;
+  }
+  
+  #gnb > ul > li.logo {
+    width: auto;
+    font-size: 20px;
+  }
+  
+  .search-form {
+    width: 300px;
+  }
+  
+  .login-modal {
+    width: 90%;
+    min-width: 300px;
+  }
+}

@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Main from './pages/Main';
-import AroundMe from './pages/AroundMe';
-import Detail from './pages/Detail';
-import Register from './pages/Register';
-import MyPage from './pages/MyPage';
-import NewPlace from './pages/NewPlace';
-import MoreInfo from './pages/MoreInfo';
-import './styles/global.css';
+import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Main from './pages/Main'
+import AroundMe from './pages/AroundMe'
+import Detail from './pages/Detail'
+import Register from './pages/Register'
+import MyPage from './pages/MyPage'
+import NewPlace from './pages/NewPlace'
+import MoreInfo from './pages/MoreInfo'
+import './styles/global.css'
+import './App.css'
 
 interface User {
   id: string;
@@ -16,7 +17,7 @@ interface User {
 }
 
 function App() {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     // 세션에서 사용자 정보 확인 (실제로는 API 호출로 확인)
@@ -57,7 +58,7 @@ function App() {
         </main>
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

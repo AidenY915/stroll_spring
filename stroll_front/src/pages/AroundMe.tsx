@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { placeAPI } from '../services/api';
 import { Place, SearchParams } from '../types';
-import KakaoMap from '../components/KakaoMap';
 import './AroundMe.css';
 
 interface AroundMeProps {
@@ -13,7 +12,6 @@ const AroundMe: React.FC<AroundMeProps> = ({ user }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [places, setPlaces] = useState<Place[]>([]);
   const [loading, setLoading] = useState(false);
-  const [showMap, setShowMap] = useState(false);
   const [myLocation, setMyLocation] = useState('내 위치:');
   const [filters, setFilters] = useState({
     maxDistance: parseInt(searchParams.get('maxDistance') || '50'),
@@ -58,7 +56,7 @@ const AroundMe: React.FC<AroundMeProps> = ({ user }) => {
       };
 
       const response = await placeAPI.getPlaces(params);
-      setPlaces(response.places);
+      setPlaces(response.places || []);
     } catch (error) {
       console.error('장소 조회 실패:', error);
     } finally {
@@ -102,17 +100,6 @@ const AroundMe: React.FC<AroundMeProps> = ({ user }) => {
     setSearchParams(updated);
   };
 
-  const handleLocationSet = (address: string, x: number, y: number) => {
-    setMyLocation(`내 위치: ${address}`);
-    updateSearchParams({
-      address,
-      x: x.toString(),
-      y: y.toString(),
-      page: '1',
-    });
-    setShowMap(false);
-  };
-
   return (
     <div className="aroundme-page">
       <header>
@@ -122,7 +109,7 @@ const AroundMe: React.FC<AroundMeProps> = ({ user }) => {
             <span>{myLocation}</span>
             <button 
               className="location-btn btn-primary"
-              onClick={() => setShowMap(true)}
+              onClick={() => alert('위치 설정 기능은 카카오 맵 연동 후 사용 가능합니다.')}
             >
               내 위치 설정
             </button>
@@ -235,23 +222,10 @@ const AroundMe: React.FC<AroundMeProps> = ({ user }) => {
                   ))}
                 </ul>
               )}
-
-              {/* 페이지네이션 */}
-              <div className="paging-div">
-                {/* 페이지네이션 로직은 백엔드 응답에 따라 구현 */}
-              </div>
             </section>
           </div>
         </div>
       </div>
-
-      {/* 카카오 맵 모달 */}
-      {showMap && (
-        <KakaoMap
-          onLocationSelect={handleLocationSet}
-          onClose={() => setShowMap(false)}
-        />
-      )}
     </div>
   );
 };

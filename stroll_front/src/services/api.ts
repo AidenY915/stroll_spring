@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { User, Place, Reply, SearchParams, ApiResponse } from '../types';
 
-// API 베이스 URL 설정 (백엔드 서버 주소에 맞게 수정 필요)
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+// API 베이스 URL 설정
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
